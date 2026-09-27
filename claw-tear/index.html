@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claw Tear</title>
+    <meta name="description" content="Claw Tear - A high-fidelity AI chat application powered by local Ollama models." />
+    <meta property="og:title" content="Claw Tear" />
+    <meta property="og:description" content="Claw Tear - A high-fidelity AI chat application powered by local Ollama models." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script>
+      // Prevent third-party browser extension injection collisions from bubbling
+      window.addEventListener('error', function(event) {
+        if (event && event.message && (
+          event.message.includes('initCoreHelpers') ||
+          event.message.includes('has already been declared')
+        )) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          return true;
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

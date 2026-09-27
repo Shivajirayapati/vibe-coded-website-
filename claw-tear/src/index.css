@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(140, 140, 150, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(140, 140, 150, 0.45);
+  }
+}
+
+/* Syntax highlighting classes for generated code snippets (vibrant, modern dark/light themes) */
+.syn-kw { color: #e11d48; font-weight: 600; }
+.syn-str { color: #059669; }
+.syn-num { color: #d97706; }
+.syn-bool { color: #ea580c; font-weight: 500; }
+.syn-com { color: #64748b; font-style: italic; }
+.syn-fn { color: #7c3aed; font-weight: 500; }
+.syn-type { color: #0284c7; font-weight: 500; }
+.syn-op { color: #db2777; }
+.syn-attr { color: #9333ea; }
+.syn-tag { color: #e11d48; }
+
+.dark .syn-kw { color: #fb7185; font-weight: 600; }
+.dark .syn-str { color: #4ade80; }
+.dark .syn-num { color: #facc15; }
+.dark .syn-bool { color: #fb923c; font-weight: 500; }
+.dark .syn-com { color: #94a3b8; font-style: italic; }
+.dark .syn-fn { color: #c084fc; font-weight: 500; }
+.dark .syn-type { color: #38bdf8; font-weight: 500; }
+.dark .syn-op { color: #f472b6; }
+.dark .syn-attr { color: #a78bfa; }
+.dark .syn-tag { color: #f87171; }
+
+/* ==========================================================================
+   Tokyo Night (VS Code Official Theme)
+   Palette: Background (#1a1b26), Sidebar (#16161e), Surface/Cards (#24283b),
+   Popovers/Code (#1f2335), Borders (#292e42), Text (#c0caf5), Accents (#7aa2f7, #bb9af7)
+   ========================================================================== */
+html.tokyo-night,
+.tokyo-night {
+  color-scheme: dark;
+  --tn-bg-base: #1a1b26;
+  --tn-bg-darker: #16161e;
+  --tn-bg-surface: #24283b;
+  --tn-bg-card: #1f2335;
+  --tn-bg-hover: #292e42;
+  --tn-border: #292e42;
+  --tn-border-focus: #7aa2f7;
+  --tn-text: #c0caf5;
+  --tn-text-muted: #7982a9;
+  --tn-accent-blue: #7aa2f7;
+  --tn-accent-purple: #bb9af7;
+  --tn-accent-green: #9ece6a;
+  --tn-accent-orange: #ff9e64;
+  --tn-accent-cyan: #7dcfff;
+}
+
+html.tokyo-night body {
+  background-color: #1a1b26 !important;
+  color: #c0caf5 !important;
+}
+
+/* Tokyo Night main backgrounds */
+html.tokyo-night .dark\:bg-\[\#000000\],
+html.tokyo-night .bg-\[\#000000\] {
+  background-color: #1a1b26 !important;
+}
+
+html.tokyo-night .dark\:bg-\[\#121212\],
+html.tokyo-night .bg-\[\#121212\] {
+  background-color: #16161e !important;
+}
+
+html.tokyo-night .dark\:bg-\[\#171717\],
+html.tokyo-night .bg-\[\#171717\] {
+  background-color: #16161e !important;
+}
+
+html.tokyo-night .dark\:bg-\[\#212121\],
+html.tokyo-night .bg-\[\#212121\] {
+  background-color: #24283b !important;
+}
+
+html.tokyo-night .dark\:bg-\[\#1e1e1e\],
+html.tokyo-night .dark\:bg-\[\#282828\],
+html.tokyo-night .dark\:bg-\[\#2f2f2f\],
+html.tokyo-night .dark\:bg-\[\#2d2d2d\],
+html.tokyo-night .dark\:bg-\[\#181818\],
+html.tokyo-night .dark\:bg-\[\#1a1a1c\],
+html.tokyo-night .dark\:bg-\[\#1a1a1a\] {
+  background-color: #1f2335 !important;
+}
+
+html.tokyo-night .dark\:bg-\[\#383838\],
+html.tokyo-night .dark\:bg-\[\#404040\] {
+  background-color: #292e42 !important;
+}
+
+/* Tokyo Night borders */
+html.tokyo-night .dark\:border-\[\#212121\],
+html.tokyo-night .dark\:border-\[\#333333\],
+html.tokyo-night .dark\:border-\[\#383838\],
+html.tokyo-night .dark\:border-\[\#404040\],
+html.tokyo-night .border-\[\#212121\],
+html.tokyo-night .dark\:border-white\/10,
+html.tokyo-night .dark\:border-white\/5,
+html.tokyo-night .border-black\/5 {
+  border-color: #292e42 !important;
+}
+
+html.tokyo-night .dark\:focus\:border-\[\#383838\]:focus {
+  border-color: #7aa2f7 !important;
+}
+
+/* Tokyo Night bottom composer gradient & prompt box styling */
+html.tokyo-night .composer-bottom-gradient,
+html.tokyo-night div[class*="dark:from-[#000000]"],
+html.tokyo-night div[class*="from-[#000000]"] {
+  background: linear-gradient(to top, #1a1b26 0%, #1a1b26 65%, rgba(26, 27, 38, 0) 100%) !important;
+}
+
+html.tokyo-night .dark\:from-\[\#000000\] {
+  --tw-gradient-from: #1a1b26 !important;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)) !important;
+}
+
+html.tokyo-night .dark\:via-\[\#000000\] {
+  --tw-gradient-via: #1a1b26 !important;
+  --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-via-stops) !important;
+}
+
+html.tokyo-night .prompt-box-capsule {
+  background-color: #24283b !important;
+  border-color: #292e42 !important;
+  box-shadow: 0 4px 18px rgba(15, 17, 26, 0.45) !important;
+}
+
+html.tokyo-night .prompt-box-capsule:focus-within {
+  border-color: #7aa2f7 !important;
+  box-shadow: 0 0 0 1px #7aa2f7, 0 4px 18px rgba(15, 17, 26, 0.5) !important;
+}
+
+html.tokyo-night .shadow-lg,
+html.tokyo-night .shadow-xl,
+html.tokyo-night .shadow-2xl {
+  --tw-shadow-color: rgba(15, 17, 26, 0.4) !important;
+}
+
+/* Tokyo Night texts */
+html.tokyo-night .dark\:text-\[\#ececec\],
+html.tokyo-night .dark\:text-white {
+  color: #c0caf5 !important;
+}
+
+html.tokyo-night .dark\:text-\[\#b4b4b4\],
+html.tokyo-night .dark\:text-\[\#a0a0a0\],
+html.tokyo-night .dark\:text-neutral-400,
+html.tokyo-night .text-\[\#8e8e8e\] {
+  color: #7982a9 !important;
+}
+
+html.tokyo-night .dark\:hover\:bg-\[\#1a1a1a\]:hover,
+html.tokyo-night .dark\:hover\:bg-white\/5:hover,
+html.tokyo-night .dark\:hover\:bg-white\/10:hover {
+  background-color: #292e42 !important;
+}
+
+/* Tokyo Night code blocks (Markdown) */
+html.tokyo-night .markdown-body div[class*="bg-[#0d0d0d]"] {
+  background-color: #16161e !important;
+  border-color: #292e42 !important;
+}
+html.tokyo-night .markdown-body div[class*="bg-[#2f2f2f]"] {
+  background-color: #1f2335 !important;
+  border-bottom: 1px solid #292e42 !important;
+  color: #7982a9 !important;
+}
+html.tokyo-night .markdown-body div[class*="bg-[#0d0d0d]"] pre {
+  color: #c0caf5 !important;
+}
+
+/* Tokyo Night tables */
+html.tokyo-night .markdown-body table {
+  background-color: #1f2335 !important;
+}
+html.tokyo-night .markdown-body tr:hover {
+  background-color: #24283b !important;
+}
+
+/* Tokyo Night syntax tokens (VS Code) */
+html.tokyo-night .syn-kw { color: #bb9af7 !important; font-weight: 600; }
+html.tokyo-night .syn-str { color: #9ece6a !important; }
+html.tokyo-night .syn-num { color: #ff9e64 !important; }
+html.tokyo-night .syn-bool { color: #ff9e64 !important; font-weight: 500; }
+html.tokyo-night .syn-com { color: #565f89 !important; font-style: italic; }
+html.tokyo-night .syn-fn { color: #7aa2f7 !important; font-weight: 500; }
+html.tokyo-night .syn-type { color: #2ac3de !important; font-weight: 500; }
+html.tokyo-night .syn-op { color: #89ddff !important; }
+html.tokyo-night .syn-attr { color: #bb9af7 !important; }
+html.tokyo-night .syn-tag { color: #f7768e !important; }
+
+/* Tokyo Night scrollbar & selection */
+html.tokyo-night ::-webkit-scrollbar-thumb {
+  background: rgba(122, 162, 247, 0.25) !important;
+}
+html.tokyo-night ::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 162, 247, 0.45) !important;
+}
+html.tokyo-night ::selection {
+  background: #283457 !important;
+  color: #c0caf5 !important;
+}
+
+/* Tokyo Night kbd and inspiration cards */
+html.tokyo-night kbd {
+  background-color: #1f2335 !important;
+  border-color: #292e42 !important;
+  color: #7aa2f7 !important;
+}
+
+
